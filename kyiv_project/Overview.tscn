@@ -1,0 +1,891 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://assets/MIT-Elizabeth-Wood-Ukraine-01a-press_0.jpg" type="Texture" id=1]
+[ext_resource path="res://Map.gd" type="Script" id=3]
+[ext_resource path="res://Info.gd" type="Script" id=4]
+[ext_resource path="res://assets/BOOKOS.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://Tooltip.gd" type="Script" id=6]
+[ext_resource path="res://ChosenHandler.gd" type="Script" id=7]
+[ext_resource path="res://audio.gd" type="Script" id=8]
+[ext_resource path="res://assets/600px-Infobox_info_icon_white.svg.png" type="Texture" id=9]
+[ext_resource path="res://ColorPoly.gd" type="Script" id=10]
+[ext_resource path="res://assets/scracthes.png" type="Texture" id=11]
+[ext_resource path="res://assets/OperationNapalm-nRBWO.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://ColorSlider.gd" type="Script" id=13]
+[ext_resource path="res://assets/russia_flag.png" type="Texture" id=14]
+[ext_resource path="res://assets/ukraine_flag.png" type="Texture" id=15]
+[ext_resource path="res://assets/radiation_PNG30.png" type="Texture" id=16]
+[ext_resource path="res://assets/durastripe-yellow-triangle-floor-safety-sign-radiation-bieu-tuong-phong-xa-11563245035uzayd70vo6.png" type="Texture" id=17]
+[ext_resource path="res://assets/plane_airplane_icon_206521.png" type="Texture" id=18]
+[ext_resource path="res://assets/56930.png" type="Texture" id=19]
+[ext_resource path="res://assets/star-symbol.png" type="Texture" id=20]
+[ext_resource path="res://assets/floppy_disk.png" type="Texture" id=21]
+[ext_resource path="res://DrawArrow.gd" type="Script" id=22]
+[ext_resource path="res://SaveButton.gd" type="Script" id=23]
+[ext_resource path="res://assets/raised_fist.png" type="Texture" id=24]
+[ext_resource path="res://UnrestSlider.gd" type="Script" id=25]
+[ext_resource path="res://TextBox.gd" type="Script" id=26]
+
+[sub_resource type="GDScript" id=12]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="DynamicFont" id=3]
+size = 11
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.22, 0.22, 0.22, 0.756863 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxLine" id=5]
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=8]
+thickness = 4
+vertical = true
+
+[sub_resource type="DynamicFont" id=9]
+size = 21
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0666667, 0.176471, 0.34902, 0.2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 17
+font_data = ExtResource( 12 )
+
+[sub_resource type="AudioStreamGenerator" id=2]
+
+[node name="Map" type="Node2D"]
+script = SubResource( 12 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 7 )
+
+[node name="Mit-Elizabeth-Wood-Ukraine-01a-press0" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 512, 299.5 )
+scale = Vector2( 1.13778, 0.998333 )
+texture = ExtResource( 1 )
+
+[node name="Zakarpattia" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Zakarpattia"]
+visible = false
+polygon = PoolVector2Array( 138, 250, 151, 253, 153, 262, 162, 264, 164, 268, 178, 273, 183, 278, 186, 278, 190, 285, 193, 286, 194, 289, 200, 289, 203, 287, 203, 297, 209, 297, 217, 304, 217, 310, 221, 314, 219, 321, 214, 321, 206, 324, 199, 324, 195, 320, 189, 321, 184, 317, 169, 317, 161, 309, 155, 310, 151, 315, 145, 314, 144, 309, 136, 305, 132, 299, 123, 296, 117, 285, 119, 278, 126, 272, 129, 263, 136, 256 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Zakarpattia"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Lviv" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Lviv"]
+visible = false
+polygon = PoolVector2Array( 163, 264, 154, 262, 152, 252, 149, 245, 147, 220, 153, 218, 156, 212, 165, 205, 171, 198, 182, 189, 188, 186, 200, 177, 206, 177, 214, 169, 215, 165, 217, 164, 220, 167, 226, 166, 228, 170, 230, 171, 228, 177, 233, 177, 238, 183, 253, 184, 252, 186, 253, 188, 257, 188, 256, 198, 260, 202, 265, 203, 265, 211, 262, 213, 254, 213, 250, 215, 250, 220, 246, 221, 234, 231, 222, 230, 218, 237, 216, 245, 219, 248, 217, 249, 210, 249, 207, 250, 190, 251, 185, 253, 183, 256, 180, 260, 178, 263, 179, 268, 178, 271, 178, 273, 164, 268 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Lviv"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Volyn" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Volyn"]
+visible = false
+polygon = PoolVector2Array( 200, 104, 208, 104, 213, 106, 223, 106, 225, 103, 228, 101, 228, 97, 234, 92, 267, 92, 269, 90, 272, 92, 283, 93, 283, 98, 277, 104, 276, 108, 279, 113, 277, 117, 278, 125, 288, 126, 290, 132, 294, 134, 297, 140, 292, 141, 293, 145, 298, 145, 298, 150, 295, 150, 295, 157, 288, 161, 288, 168, 285, 169, 277, 166, 267, 166, 267, 170, 263, 171, 262, 173, 258, 173, 254, 177, 257, 183, 252, 183, 240, 183, 234, 177, 229, 177, 229, 175, 231, 172, 227, 166, 220, 166, 216, 163, 215, 160, 211, 155, 212, 153, 218, 152, 213, 147, 208, 133, 200, 123 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Volyn"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Rivne" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Rivne"]
+visible = false
+polygon = PoolVector2Array( 284, 94, 303, 95, 306, 99, 314, 99, 317, 101, 332, 105, 333, 106, 338, 106, 342, 104, 345, 106, 350, 117, 357, 115, 364, 115, 365, 121, 361, 128, 358, 127, 358, 131, 355, 134, 356, 137, 349, 149, 346, 149, 345, 151, 347, 169, 341, 176, 338, 175, 333, 178, 328, 178, 324, 181, 323, 184, 312, 192, 308, 192, 301, 196, 301, 192, 289, 191, 283, 195, 272, 196, 268, 195, 266, 202, 263, 200, 260, 200, 257, 197, 259, 188, 254, 187, 254, 185, 257, 184, 258, 183, 255, 178, 258, 174, 263, 173, 263, 171, 266, 171, 268, 167, 276, 167, 286, 170, 289, 167, 288, 162, 296, 157, 296, 152, 299, 150, 299, 144, 294, 144, 293, 142, 298, 141, 299, 139, 296, 134, 290, 131, 289, 126, 279, 125, 279, 117, 281, 113, 277, 108, 278, 104, 284, 99 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Rivne"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Kyiv" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Kyiv"]
+visible = false
+polygon = PoolVector2Array( 434, 130, 438, 130, 447, 125, 450, 127, 472, 127, 480, 138, 483, 141, 486, 145, 487, 148, 485, 152, 486, 154, 487, 161, 491, 162, 492, 165, 491, 168, 493, 169, 504, 168, 510, 175, 511, 180, 517, 183, 529, 183, 537, 177, 540, 180, 544, 181, 542, 184, 548, 190, 548, 195, 543, 199, 542, 203, 538, 207, 539, 210, 536, 214, 530, 220, 519, 218, 510, 221, 507, 235, 508, 238, 498, 250, 488, 250, 478, 251, 476, 256, 468, 254, 466, 251, 459, 255, 456, 255, 449, 260, 442, 252, 438, 249, 442, 245, 440, 243, 441, 240, 438, 237, 440, 234, 436, 227, 436, 223, 449, 216, 446, 210, 449, 204, 447, 196, 443, 189, 437, 187, 439, 184, 438, 182, 440, 178, 439, 176, 442, 172, 442, 168, 440, 166, 439, 159, 435, 156, 439, 153, 436, 146, 431, 145, 431, 140, 436, 134 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Kyiv"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Chernihiv" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Chernihiv"]
+visible = false
+polygon = PoolVector2Array( 483, 140, 486, 144, 487, 148, 485, 152, 488, 155, 488, 160, 493, 163, 492, 168, 506, 168, 511, 174, 511, 177, 514, 181, 529, 182, 537, 176, 539, 176, 542, 180, 545, 180, 546, 182, 543, 184, 549, 190, 556, 189, 558, 186, 565, 188, 575, 189, 588, 180, 587, 168, 590, 167, 589, 163, 591, 157, 591, 152, 581, 145, 581, 140, 585, 136, 584, 128, 588, 126, 589, 117, 585, 109, 587, 100, 596, 96, 597, 91, 600, 88, 593, 83, 597, 75, 591, 73, 581, 79, 567, 79, 564, 76, 557, 76, 555, 86, 549, 92, 541, 92, 533, 90, 514, 90, 511, 92, 506, 90, 499, 91, 498, 96, 483, 112, 482, 121, 484, 127, 486, 129, 486, 133, 482, 138 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Chernihiv"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Sumy" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Sumy"]
+visible = false
+polygon = PoolVector2Array( 597, 74, 601, 73, 602, 76, 604, 76, 609, 72, 615, 72, 617, 76, 625, 84, 627, 93, 640, 104, 640, 108, 638, 109, 633, 110, 630, 113, 630, 115, 632, 120, 635, 121, 635, 123, 633, 127, 636, 129, 636, 136, 640, 136, 643, 134, 652, 137, 653, 138, 662, 138, 665, 136, 672, 137, 673, 146, 681, 144, 682, 146, 680, 153, 684, 157, 687, 166, 684, 171, 688, 179, 694, 180, 696, 185, 690, 187, 686, 186, 679, 193, 675, 193, 667, 198, 663, 197, 657, 199, 656, 200, 648, 200, 651, 198, 644, 189, 643, 186, 640, 184, 638, 176, 632, 178, 630, 180, 626, 178, 621, 178, 620, 180, 614, 181, 595, 178, 589, 179, 590, 175, 588, 170, 592, 166, 590, 163, 593, 157, 592, 150, 583, 145, 583, 141, 587, 136, 585, 129, 589, 125, 591, 117, 587, 109, 589, 100, 598, 96, 598, 92, 601, 88, 595, 83 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Sumy"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Zhytomyr" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Zhytomyr"]
+visible = false
+polygon = PoolVector2Array( 365, 122, 368, 123, 371, 122, 372, 117, 374, 116, 377, 118, 383, 119, 388, 115, 393, 119, 393, 121, 396, 121, 400, 118, 405, 121, 405, 126, 410, 129, 411, 122, 422, 117, 427, 117, 428, 121, 430, 126, 430, 130, 435, 132, 434, 135, 429, 142, 430, 146, 436, 148, 438, 152, 434, 156, 437, 159, 438, 166, 441, 170, 438, 174, 438, 178, 437, 182, 438, 184, 435, 186, 441, 189, 446, 196, 447, 205, 444, 209, 446, 213, 448, 215, 436, 223, 435, 228, 437, 231, 426, 236, 417, 235, 415, 230, 417, 227, 415, 225, 416, 219, 411, 218, 404, 222, 391, 222, 379, 223, 369, 224, 367, 225, 366, 223, 361, 222, 356, 216, 358, 209, 361, 209, 360, 196, 355, 196, 344, 186, 346, 182, 341, 176, 347, 170, 347, 166, 346, 150, 350, 148, 357, 137, 356, 134, 358, 131, 358, 127, 361, 128 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Zhytomyr"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Ivano-Frankivsk" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Ivano-Frankivsk"]
+visible = false
+polygon = PoolVector2Array( 222, 231, 233, 233, 236, 241, 238, 250, 237, 252, 237, 256, 243, 257, 239, 259, 239, 262, 247, 265, 248, 270, 252, 270, 252, 275, 256, 273, 266, 276, 269, 283, 265, 286, 266, 290, 265, 299, 259, 297, 254, 300, 249, 305, 244, 307, 244, 310, 239, 314, 234, 321, 235, 326, 234, 333, 230, 337, 229, 333, 220, 323, 220, 320, 223, 316, 220, 313, 218, 310, 220, 307, 218, 303, 209, 295, 204, 297, 204, 287, 194, 288, 193, 285, 190, 284, 187, 278, 184, 278, 183, 275, 180, 273, 181, 267, 180, 264, 182, 262, 182, 260, 186, 256, 189, 252, 220, 250, 218, 244, 218, 242, 220, 240, 219, 237, 221, 235 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Ivano-Frankivsk"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Chernivtsi" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Chernivtsi"]
+visible = false
+polygon = PoolVector2Array( 233, 338, 240, 338, 250, 328, 270, 328, 279, 326, 287, 326, 293, 323, 295, 316, 308, 312, 312, 314, 317, 311, 318, 304, 320, 304, 326, 307, 328, 304, 331, 304, 334, 307, 339, 307, 341, 301, 344, 303, 348, 299, 348, 294, 344, 290, 341, 292, 339, 294, 336, 294, 329, 292, 322, 295, 320, 292, 317, 292, 317, 295, 315, 296, 313, 294, 312, 294, 311, 299, 309, 299, 307, 298, 306, 295, 289, 294, 287, 288, 281, 291, 278, 290, 277, 286, 273, 287, 271, 285, 267, 285, 267, 290, 266, 300, 259, 299, 248, 307, 246, 308, 245, 311, 239, 315, 235, 322, 236, 328, 235, 334, 232, 336 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Chernivtsi"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Ternopil" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Ternopil"]
+visible = false
+polygon = PoolVector2Array( 271, 197, 283, 196, 289, 192, 300, 192, 299, 198, 301, 200, 299, 203, 299, 205, 296, 210, 299, 229, 294, 235, 297, 244, 297, 250, 295, 254, 295, 263, 296, 265, 294, 270, 296, 277, 294, 282, 301, 294, 290, 292, 287, 287, 280, 290, 278, 285, 270, 283, 267, 276, 261, 272, 256, 271, 254, 273, 253, 268, 250, 269, 246, 263, 241, 262, 240, 260, 244, 257, 238, 256, 238, 252, 240, 250, 235, 232, 247, 222, 251, 221, 251, 216, 263, 214, 267, 210, 267, 203, 269, 196 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Ternopil"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Khmelnytskyi" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Khmelnytskyi"]
+visible = false
+polygon = PoolVector2Array( 303, 197, 308, 193, 312, 193, 324, 184, 325, 181, 329, 178, 333, 178, 339, 175, 340, 178, 344, 181, 343, 186, 354, 198, 358, 197, 360, 207, 356, 209, 354, 215, 361, 223, 366, 224, 363, 228, 365, 231, 362, 239, 367, 250, 367, 259, 364, 261, 357, 258, 350, 261, 347, 266, 344, 288, 338, 293, 328, 292, 324, 294, 321, 291, 316, 291, 311, 293, 309, 297, 306, 293, 302, 293, 296, 283, 299, 243, 295, 237, 301, 228, 297, 210 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Khmelnytskyi"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Vinnytsia" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Vinnytsia"]
+visible = false
+polygon = PoolVector2Array( 365, 228, 370, 225, 405, 224, 412, 219, 414, 220, 415, 236, 426, 237, 437, 233, 437, 237, 439, 240, 438, 243, 440, 245, 437, 249, 446, 260, 440, 268, 444, 271, 442, 275, 445, 276, 448, 286, 453, 287, 452, 290, 456, 291, 457, 302, 461, 303, 457, 306, 452, 304, 448, 309, 458, 316, 454, 318, 451, 317, 444, 318, 444, 324, 437, 324, 433, 322, 429, 324, 416, 319, 414, 327, 411, 327, 403, 320, 394, 319, 391, 323, 388, 320, 386, 320, 388, 316, 384, 313, 380, 316, 362, 302, 350, 301, 348, 293, 345, 289, 347, 285, 348, 267, 351, 265, 351, 262, 355, 262, 358, 260, 365, 262, 369, 259, 367, 254, 369, 251, 363, 240, 367, 232 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Vinnytsia"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Cherkasy" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Cherkasy"]
+visible = false
+polygon = PoolVector2Array( 448, 262, 466, 253, 468, 256, 476, 258, 478, 253, 499, 251, 509, 238, 511, 222, 519, 219, 530, 222, 539, 210, 545, 198, 554, 205, 561, 214, 559, 220, 577, 236, 586, 249, 575, 251, 574, 261, 581, 268, 569, 273, 563, 266, 551, 271, 542, 277, 534, 273, 525, 277, 518, 286, 491, 284, 481, 296, 463, 302, 459, 301, 458, 290, 453, 285, 449, 285, 447, 275, 442, 267 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Cherkasy"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Kirovohrad" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Kirovohrad"]
+visible = false
+polygon = PoolVector2Array( 452, 306, 457, 307, 467, 301, 483, 297, 491, 285, 518, 287, 527, 281, 526, 277, 537, 275, 542, 279, 547, 275, 552, 277, 554, 270, 564, 268, 568, 274, 582, 271, 575, 261, 575, 252, 586, 248, 600, 265, 601, 269, 626, 275, 626, 280, 613, 282, 623, 288, 609, 296, 613, 312, 594, 326, 588, 325, 578, 330, 575, 340, 557, 340, 553, 343, 541, 339, 541, 334, 535, 328, 537, 323, 530, 322, 526, 325, 525, 321, 514, 322, 507, 316, 500, 319, 490, 318, 485, 320, 470, 319, 462, 320, 450, 309 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Kirovohrad"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Odessa" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Odessa"]
+visible = false
+polygon = PoolVector2Array( 417, 320, 428, 325, 434, 323, 443, 325, 444, 319, 457, 317, 462, 321, 471, 322, 469, 326, 469, 330, 475, 342, 478, 352, 494, 353, 498, 358, 495, 365, 499, 373, 511, 373, 508, 377, 516, 381, 515, 390, 505, 393, 510, 398, 512, 410, 492, 417, 490, 430, 483, 438, 468, 423, 464, 424, 466, 433, 476, 442, 469, 457, 464, 458, 460, 457, 454, 460, 452, 463, 448, 464, 450, 470, 448, 472, 445, 469, 443, 462, 440, 463, 438, 474, 443, 481, 448, 487, 443, 496, 440, 496, 438, 487, 433, 483, 424, 483, 407, 490, 404, 486, 400, 487, 399, 493, 385, 490, 375, 480, 375, 477, 386, 476, 389, 473, 388, 466, 400, 457, 401, 450, 408, 448, 413, 437, 410, 432, 409, 422, 420, 416, 422, 424, 432, 419, 441, 425, 445, 421, 449, 426, 456, 426, 458, 421, 455, 417, 454, 399, 442, 395, 438, 389, 440, 385, 435, 381, 437, 378, 439, 369, 436, 368, 433, 371, 418, 358, 420, 348, 423, 345, 424, 338, 421, 333, 419, 332, 416, 334, 411, 328, 414, 327 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Odessa"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Crimea" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="CanvasLayer/Crimea"]
+visible = false
+polygon = PoolVector2Array( 620, 454, 575, 477, 578, 487, 582, 484, 594, 483, 608, 494, 616, 492, 627, 500, 626, 510, 631, 514, 631, 519, 628, 522, 635, 525, 637, 535, 632, 535, 635, 539, 651, 539, 655, 534, 663, 531, 667, 521, 678, 513, 692, 512, 698, 515, 700, 507, 709, 503, 709, 499, 716, 493, 726, 494, 731, 499, 758, 495, 761, 477, 770, 476, 768, 472, 750, 469, 740, 474, 738, 477, 734, 477, 729, 472, 726, 477, 721, 479, 717, 484, 695, 481, 695, 472, 686, 461, 677, 460, 677, 452, 666, 456, 673, 449, 663, 449, 662, 445, 649, 446, 646, 441, 636, 441, 634, 437, 628, 436, 627, 431, 624, 439, 626, 443, 625, 447, 629, 449, 627, 453 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Crimea"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Sevastopol" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Sevastopol"]
+visible = false
+polygon = PoolVector2Array( 627, 510, 623, 512, 622, 519, 621, 525, 615, 527, 626, 533, 632, 539, 635, 539, 632, 535, 637, 535, 635, 525, 628, 522, 631, 519, 631, 515 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Sevastopol"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Mykolaiv" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Mykolaiv"]
+visible = false
+polygon = PoolVector2Array( 547, 405, 576, 395, 586, 396, 592, 389, 595, 386, 588, 381, 597, 375, 594, 360, 596, 354, 591, 346, 594, 343, 593, 327, 587, 329, 578, 331, 577, 339, 569, 343, 559, 341, 552, 344, 540, 340, 540, 335, 533, 327, 535, 324, 526, 327, 524, 323, 513, 323, 508, 318, 495, 321, 490, 320, 472, 321, 471, 325, 469, 329, 473, 339, 476, 342, 477, 350, 493, 352, 498, 358, 497, 369, 511, 373, 509, 377, 516, 381, 515, 391, 506, 392, 511, 399, 512, 411, 520, 413, 526, 407, 527, 403, 531, 401, 528, 409, 531, 410, 543, 411, 543, 401 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Mykolaiv"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Kherson" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Kherson"]
+visible = false
+polygon = PoolVector2Array( 547, 406, 550, 404, 576, 395, 587, 397, 588, 393, 592, 392, 592, 389, 596, 385, 589, 381, 598, 375, 597, 364, 595, 360, 599, 361, 597, 353, 602, 354, 607, 357, 614, 354, 618, 354, 620, 357, 634, 357, 637, 359, 639, 364, 649, 365, 651, 368, 660, 366, 660, 376, 666, 386, 675, 391, 670, 403, 674, 404, 673, 408, 689, 414, 692, 426, 683, 427, 677, 434, 672, 432, 667, 434, 657, 432, 657, 435, 650, 429, 646, 436, 642, 436, 638, 432, 634, 434, 632, 432, 625, 431, 625, 436, 620, 437, 618, 443, 606, 434, 600, 438, 584, 439, 577, 442, 566, 442, 545, 430, 550, 422, 538, 418, 535, 421, 529, 416, 543, 416, 558, 418, 567, 418, 567, 415, 561, 412, 556, 414, 553, 410, 550, 410 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Kherson"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Zaporizhzhia" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Zaporizhzhia"]
+visible = false
+polygon = PoolVector2Array( 631, 356, 635, 352, 640, 351, 644, 353, 648, 348, 650, 350, 665, 349, 668, 351, 679, 349, 676, 334, 673, 332, 677, 327, 672, 319, 689, 317, 702, 319, 709, 316, 715, 318, 720, 315, 728, 325, 728, 331, 732, 329, 736, 332, 748, 328, 757, 341, 765, 345, 768, 344, 780, 350, 775, 355, 775, 359, 769, 360, 767, 365, 775, 374, 778, 374, 775, 381, 776, 385, 767, 393, 755, 392, 744, 402, 729, 400, 702, 421, 693, 412, 696, 419, 693, 425, 689, 414, 674, 408, 675, 404, 671, 402, 676, 392, 667, 386, 659, 365, 653, 367, 640, 363 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Zaporizhzhia"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Donetsk" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Donetsk"]
+visible = false
+polygon = PoolVector2Array( 753, 286, 750, 274, 762, 273, 775, 263, 777, 256, 786, 250, 781, 248, 783, 245, 795, 246, 800, 242, 806, 248, 805, 258, 813, 260, 817, 264, 821, 286, 828, 291, 826, 295, 835, 296, 840, 304, 846, 304, 847, 310, 856, 311, 857, 317, 849, 319, 846, 331, 841, 331, 837, 335, 829, 336, 827, 354, 830, 354, 829, 359, 827, 362, 826, 369, 822, 370, 820, 368, 803, 371, 794, 374, 794, 377, 789, 382, 784, 381, 778, 386, 775, 382, 778, 378, 778, 373, 775, 373, 768, 366, 770, 361, 776, 360, 776, 356, 780, 356, 781, 349, 775, 348, 769, 343, 765, 344, 759, 340, 749, 327, 752, 324, 750, 321, 749, 315, 761, 317, 764, 314, 762, 301, 759, 301, 759, 290, 760, 285 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Donetsk"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Dnipropetrovsk" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Dnipropetrovsk"]
+visible = false
+polygon = PoolVector2Array( 595, 344, 595, 334, 593, 331, 601, 320, 614, 312, 610, 297, 625, 289, 614, 282, 626, 281, 632, 275, 644, 281, 647, 276, 644, 273, 649, 265, 667, 256, 684, 257, 693, 266, 711, 269, 716, 265, 719, 266, 720, 272, 726, 276, 726, 281, 732, 284, 733, 289, 736, 289, 742, 283, 746, 285, 751, 284, 753, 287, 759, 286, 757, 290, 758, 301, 762, 304, 760, 311, 762, 314, 759, 316, 748, 315, 748, 321, 750, 324, 746, 328, 739, 329, 736, 331, 733, 328, 729, 330, 729, 326, 725, 318, 719, 315, 715, 317, 712, 315, 705, 315, 703, 317, 688, 316, 672, 318, 671, 323, 675, 327, 672, 330, 674, 334, 676, 349, 668, 350, 663, 347, 650, 349, 648, 347, 644, 352, 634, 351, 630, 355, 621, 356, 619, 352, 614, 353, 607, 356, 600, 352, 595, 352, 592, 346 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Dnipropetrovsk"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Poltava" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Poltava"]
+visible = false
+polygon = PoolVector2Array( 549, 192, 564, 189, 575, 191, 589, 180, 597, 180, 617, 183, 623, 179, 630, 181, 636, 177, 643, 191, 649, 197, 646, 200, 657, 202, 664, 198, 667, 203, 663, 207, 666, 213, 679, 217, 679, 221, 684, 226, 689, 226, 693, 235, 687, 237, 687, 246, 676, 246, 672, 251, 674, 255, 665, 256, 648, 265, 643, 272, 644, 279, 602, 268, 601, 264, 578, 236, 561, 219, 563, 212, 547, 196 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Poltava"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Kharkiv" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Kharkiv"]
+visible = false
+polygon = PoolVector2Array( 668, 199, 675, 193, 679, 194, 687, 188, 690, 189, 702, 186, 704, 181, 717, 179, 721, 186, 732, 186, 738, 191, 751, 182, 759, 181, 767, 176, 772, 176, 775, 183, 779, 183, 781, 192, 791, 196, 801, 204, 798, 213, 800, 217, 797, 221, 799, 226, 796, 231, 799, 240, 795, 246, 782, 245, 781, 248, 786, 250, 775, 257, 774, 263, 762, 272, 756, 272, 749, 273, 751, 282, 746, 284, 743, 281, 737, 284, 735, 288, 730, 281, 725, 274, 720, 271, 718, 264, 710, 267, 693, 265, 684, 256, 675, 256, 675, 247, 685, 248, 689, 244, 688, 237, 694, 235, 690, 223, 685, 225, 680, 215, 674, 214, 666, 211, 664, 207, 668, 205 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Kharkiv"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Luhansk" type="Area2D" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Luhansk"]
+visible = false
+polygon = PoolVector2Array( 804, 203, 806, 194, 814, 193, 813, 198, 826, 197, 838, 203, 845, 204, 847, 200, 851, 202, 855, 208, 862, 206, 868, 207, 869, 212, 879, 215, 885, 211, 891, 212, 888, 217, 889, 221, 894, 225, 895, 234, 887, 244, 882, 245, 877, 249, 879, 253, 896, 254, 896, 257, 881, 261, 880, 273, 887, 272, 892, 283, 890, 288, 896, 289, 893, 295, 891, 303, 890, 307, 891, 315, 878, 318, 876, 319, 870, 317, 858, 317, 857, 310, 848, 309, 847, 304, 840, 303, 836, 295, 828, 295, 830, 291, 825, 286, 823, 286, 819, 272, 819, 264, 814, 259, 807, 258, 807, 249, 800, 240, 797, 230, 800, 224, 799, 220, 801, 215, 798, 213, 802, 203 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Luhansk"]
+invert_border = 4158.4
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 512, 299 )
+scale = Vector2( 1.00293, 0.776623 )
+texture = ExtResource( 11 )
+
+[node name="DrawArrow" type="Control" parent="CanvasLayer"]
+margin_left = 11.0
+margin_top = 15.0
+margin_right = 32.0
+margin_bottom = 29.0
+script = ExtResource( 22 )
+
+[node name="OblastLabels" type="Node2D" parent="CanvasLayer"]
+
+[node name="Zakarpattia" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 134.0
+margin_top = 288.0
+margin_right = 224.0
+margin_bottom = 323.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Zakarpattia"
+
+[node name="Volyn" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 233.0
+margin_top = 129.0
+margin_right = 297.0
+margin_bottom = 164.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Volyn"
+
+[node name="Rivne" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 309.0
+margin_top = 136.0
+margin_right = 373.0
+margin_bottom = 171.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Rivne"
+
+[node name="Chernobyl" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 471.627, 138.5 )
+scale = Vector2( 0.0598073, 0.0574674 )
+texture = ExtResource( 17 )
+
+[node name="Kyiv" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 469.0
+margin_top = 183.0
+margin_right = 493.0
+margin_bottom = 197.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Kyiv"
+
+[node name="KyivPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 496, 194 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="KyivStar" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 461, 190 )
+scale = Vector2( 0.0673827, 0.0585938 )
+texture = ExtResource( 20 )
+
+[node name="Chernihiv" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 512.0
+margin_top = 126.0
+margin_right = 576.0
+margin_bottom = 161.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Chernihiv"
+
+[node name="Sumy" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 615.0
+margin_top = 144.0
+margin_right = 679.0
+margin_bottom = 179.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Sumy"
+
+[node name="Zhytomyr" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 368.0
+margin_top = 161.0
+margin_right = 432.0
+margin_bottom = 196.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Zhytomyr"
+
+[node name="Ivano-Frankivsk" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 195.0
+margin_top = 258.0
+margin_right = 254.0
+margin_bottom = 291.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Ivano-
+Frankivsk"
+align = 1
+
+[node name="Chernivtsi" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 254.0
+margin_top = 299.0
+margin_right = 318.0
+margin_bottom = 334.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Chernivtsi"
+
+[node name="Ternopil" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 243.0
+margin_top = 234.0
+margin_right = 307.0
+margin_bottom = 269.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Ternopil"
+
+[node name="Khmelnytskyi" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 298.0
+margin_top = 235.0
+margin_right = 371.0
+margin_bottom = 270.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Khmelnytskyi"
+
+[node name="Vinnytsia" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 373.0
+margin_top = 267.0
+margin_right = 437.0
+margin_bottom = 302.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Vinnytsia"
+
+[node name="Cherkasy" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 473.0
+margin_top = 259.0
+margin_right = 537.0
+margin_bottom = 294.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Cherkasy"
+
+[node name="Kirovohrad" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 531.0
+margin_top = 292.0
+margin_right = 595.0
+margin_bottom = 327.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Kirovohrad"
+
+[node name="Odessa" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 450.0
+margin_top = 369.0
+margin_right = 514.0
+margin_bottom = 404.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Odessa"
+
+[node name="OdessaPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 484, 415 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="OdessaPort" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 463, 447 )
+scale = Vector2( 0.05957, 0.0595705 )
+texture = ExtResource( 19 )
+
+[node name="Crimea" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 635.0
+margin_top = 481.0
+margin_right = 699.0
+margin_bottom = 516.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Crimea"
+
+[node name="CrimeaPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 640, 500 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="CrimeaPort" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 756, 477 )
+scale = Vector2( 0.05957, 0.0595705 )
+texture = ExtResource( 19 )
+
+[node name="SevastopolPort" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 627, 527 )
+scale = Vector2( 0.05957, 0.0595705 )
+texture = ExtResource( 19 )
+
+[node name="Sevastopol" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 559.0
+margin_top = 514.0
+margin_right = 623.0
+margin_bottom = 549.0
+custom_fonts/font = SubResource( 3 )
+text = "Sevastopol"
+
+[node name="Mykolaiv" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 522.0
+margin_top = 357.0
+margin_right = 586.0
+margin_bottom = 392.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Mykolaiv"
+
+[node name="Kherson" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 598.0
+margin_top = 405.0
+margin_right = 662.0
+margin_bottom = 440.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Kherson"
+
+[node name="KhersonPort" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 577, 411 )
+scale = Vector2( 0.05957, 0.0595705 )
+texture = ExtResource( 19 )
+
+[node name="ZaporizhzhiaPlant" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 668.25, 360.25 )
+scale = Vector2( 0.0605468, 0.0605469 )
+texture = ExtResource( 16 )
+
+[node name="Zaporizhzhia" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 687.0
+margin_top = 365.0
+margin_right = 754.0
+margin_bottom = 400.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Zaporizhzhia"
+
+[node name="ZaporizhzhiaPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 696, 329 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="DonestskPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 806, 301 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="Donestsk" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 774.0
+margin_top = 308.0
+margin_right = 838.0
+margin_bottom = 343.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Donestsk"
+
+[node name="DonestskPort" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 798, 365 )
+scale = Vector2( 0.05957, 0.0595705 )
+texture = ExtResource( 19 )
+
+[node name="Dnipropetrovsk" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 638.0
+margin_top = 290.0
+margin_right = 722.0
+margin_bottom = 325.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Dnipropetrovsk"
+
+[node name="DnipropetrovskPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 694, 280 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="Poltava" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 602.0
+margin_top = 218.0
+margin_right = 666.0
+margin_bottom = 242.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Poltava"
+
+[node name="Kharkiv" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 714.0
+margin_top = 220.0
+margin_right = 778.0
+margin_bottom = 255.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Kharkiv"
+
+[node name="KharkiPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 744, 215 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="Luhansk" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 822.0
+margin_top = 247.0
+margin_right = 886.0
+margin_bottom = 282.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Luhansk"
+
+[node name="Lviv" type="Label" parent="CanvasLayer/OblastLabels"]
+margin_left = 183.0
+margin_top = 208.0
+margin_right = 215.0
+margin_bottom = 224.0
+rect_pivot_offset = Vector2( -232, 46 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Lviv"
+
+[node name="LvivPlane" type="Sprite" parent="CanvasLayer/OblastLabels"]
+position = Vector2( 193.348, 227.143 )
+scale = Vector2( 0.0377045, 0.0345957 )
+texture = ExtResource( 18 )
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+margin_left = 6.0
+margin_top = 364.0
+margin_right = 357.0
+margin_bottom = 593.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="600Px-InfoboxInfoIconWhitesvg" type="Sprite" parent="CanvasLayer/Control/Panel"]
+position = Vector2( 327, 18 )
+scale = Vector2( 0.0404167, 0.0385416 )
+texture = ExtResource( 9 )
+
+[node name="Name" type="Label" parent="CanvasLayer/Control/Panel"]
+margin_left = 98.0
+margin_top = 1.0
+margin_right = 257.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 6 )
+text = "State"
+align = 1
+uppercase = true
+
+[node name="ColorSlider" type="HSlider" parent="CanvasLayer/Control/Panel"]
+margin_left = 110.0
+margin_top = 200.0
+margin_right = 226.0
+margin_bottom = 221.0
+hint_tooltip = "The control a nation has over the other on this Oblast"
+mouse_default_cursor_shape = 2
+custom_styles/slider = SubResource( 5 )
+script = ExtResource( 13 )
+
+[node name="UnrestSlider" type="VSlider" parent="CanvasLayer/Control/Panel"]
+margin_left = 21.0
+margin_top = 13.0
+margin_right = 53.0
+margin_bottom = 195.0
+hint_tooltip = "Level of civil unrest"
+mouse_default_cursor_shape = 2
+size_flags_vertical = 0
+custom_icons/grabber_highlight = ExtResource( 24 )
+custom_icons/grabber = ExtResource( 24 )
+custom_styles/slider = SubResource( 8 )
+script = ExtResource( 25 )
+
+[node name="Percentage" type="Label" parent="CanvasLayer/Control/Panel/UnrestSlider"]
+margin_left = 21.0
+margin_top = 119.0
+margin_right = 61.0
+margin_bottom = 145.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "%"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+margin_left = 137.0
+margin_top = 180.0
+margin_right = 207.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 7 )
+text = "Control"
+uppercase = true
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Control/Panel"]
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 341.0
+margin_bottom = 180.0
+custom_styles/normal = SubResource( 10 )
+wrap_enabled = true
+script = ExtResource( 26 )
+
+[node name="RussiaFlag" type="Sprite" parent="CanvasLayer/Control/Panel"]
+position = Vector2( 247, 211 )
+scale = Vector2( 0.111328, 0.0957031 )
+texture = ExtResource( 14 )
+
+[node name="UkraineFlag" type="Sprite" parent="CanvasLayer/Control/Panel"]
+position = Vector2( 90, 211 )
+scale = Vector2( 0.111, 0.096 )
+texture = ExtResource( 15 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Panel"]
+margin_left = 1.0
+margin_top = 135.0
+margin_right = 53.0
+margin_bottom = 155.0
+rect_rotation = -90.0
+custom_fonts/font = SubResource( 11 )
+text = "UNREST"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 88.0
+margin_bottom = 45.0
+text = "Save"
+icon = ExtResource( 21 )
+script = ExtResource( 23 )
+
+[node name="Tooltip" type="Label" parent="CanvasLayer"]
+margin_left = 788.0
+margin_top = 4.0
+margin_right = 1016.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 6
+text = "Hold and drag the right mouse button to draw an arrow
+
+Hold CTRL to delete arrows"
+align = 2
+autowrap = true
+script = ExtResource( 6 )
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+script = ExtResource( 8 )
+
+[connection signal="mouse_entered" from="CanvasLayer/Zakarpattia" to="CanvasLayer/Zakarpattia" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Zakarpattia" to="CanvasLayer/Zakarpattia" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Lviv" to="CanvasLayer/Lviv" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Lviv" to="CanvasLayer/Lviv" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Volyn" to="CanvasLayer/Volyn" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Volyn" to="CanvasLayer/Volyn" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Rivne" to="CanvasLayer/Rivne" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Rivne" to="CanvasLayer/Rivne" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Kyiv" to="CanvasLayer/Kyiv" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Kyiv" to="CanvasLayer/Kyiv" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Chernihiv" to="CanvasLayer/Chernihiv" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Chernihiv" to="CanvasLayer/Chernihiv" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Sumy" to="CanvasLayer/Sumy" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Sumy" to="CanvasLayer/Sumy" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Zhytomyr" to="CanvasLayer/Zhytomyr" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Zhytomyr" to="CanvasLayer/Zhytomyr" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Ivano-Frankivsk" to="CanvasLayer/Ivano-Frankivsk" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Ivano-Frankivsk" to="CanvasLayer/Ivano-Frankivsk" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Chernivtsi" to="CanvasLayer/Chernivtsi" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Chernivtsi" to="CanvasLayer/Chernivtsi" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Ternopil" to="CanvasLayer/Ternopil" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Ternopil" to="CanvasLayer/Ternopil" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Khmelnytskyi" to="CanvasLayer/Khmelnytskyi" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Khmelnytskyi" to="CanvasLayer/Khmelnytskyi" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Vinnytsia" to="CanvasLayer/Vinnytsia" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Vinnytsia" to="CanvasLayer/Vinnytsia" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Cherkasy" to="CanvasLayer/Cherkasy" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Cherkasy" to="CanvasLayer/Cherkasy" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Kirovohrad" to="CanvasLayer/Kirovohrad" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Kirovohrad" to="CanvasLayer/Kirovohrad" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Odessa" to="CanvasLayer/Odessa" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Odessa" to="CanvasLayer/Odessa" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Crimea" to="CanvasLayer/Crimea" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Crimea" to="CanvasLayer/Crimea" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Sevastopol" to="CanvasLayer/Sevastopol" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Sevastopol" to="CanvasLayer/Sevastopol" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Mykolaiv" to="CanvasLayer/Mykolaiv" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Mykolaiv" to="CanvasLayer/Mykolaiv" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Kherson" to="CanvasLayer/Kherson" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Kherson" to="CanvasLayer/Kherson" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Zaporizhzhia" to="CanvasLayer/Zaporizhzhia" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Zaporizhzhia" to="CanvasLayer/Zaporizhzhia" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Donetsk" to="CanvasLayer/Donetsk" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Donetsk" to="CanvasLayer/Donetsk" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Dnipropetrovsk" to="CanvasLayer/Dnipropetrovsk" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Dnipropetrovsk" to="CanvasLayer/Dnipropetrovsk" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Poltava" to="CanvasLayer/Poltava" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Poltava" to="CanvasLayer/Poltava" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Kharkiv" to="CanvasLayer/Kharkiv" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Kharkiv" to="CanvasLayer/Kharkiv" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Luhansk" to="CanvasLayer/Luhansk" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Luhansk" to="CanvasLayer/Luhansk" method="_on_Area2D_mouse_exited"]
+[connection signal="mode" from="CanvasLayer/DrawArrow" to="CanvasLayer/Tooltip" method="_on_DrawArrow_mode"]
+[connection signal="drag_ended" from="CanvasLayer/Control/Panel/ColorSlider" to="CanvasLayer/Control/Panel/ColorSlider" method="_on_ColorSlider_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Control/Panel/ColorSlider" to="CanvasLayer/Control/Panel/ColorSlider" method="_on_ColorSlider_value_changed"]
+[connection signal="drag_ended" from="CanvasLayer/Control/Panel/UnrestSlider" to="CanvasLayer/Control/Panel/UnrestSlider" method="_on_UnrestSlider_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Control/Panel/UnrestSlider" to="CanvasLayer/Control/Panel/UnrestSlider" method="_on_UnrestSlider_value_changed"]
+[connection signal="text_changed" from="CanvasLayer/Control/Panel/TextEdit" to="CanvasLayer/Control/Panel/TextEdit" method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_SaveButton_pressed"]

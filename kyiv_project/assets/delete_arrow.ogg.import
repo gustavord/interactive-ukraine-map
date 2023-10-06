@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/delete_arrow.ogg-ce14b831bffe770ce7ff859899aa6774.oggstr"
+
+[deps]
+
+source_file="res://assets/delete_arrow.ogg"
+dest_files=[ "res://.import/delete_arrow.ogg-ce14b831bffe770ce7ff859899aa6774.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
